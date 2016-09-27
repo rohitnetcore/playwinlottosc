@@ -1,0 +1,1 @@
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/data-tables/DT_bootstrap.css" />
