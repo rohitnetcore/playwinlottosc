@@ -17,7 +17,7 @@ class Log_Reports_Model extends CI_Model {
             $query = $this->db->query("select * from playwin_sc_log $where $sort $limit");
 
         }else if($where && $sort){
-            return $query = $this->db->query("select msisdn,circle,operator,original_msg,processed_msg,response_sms,log_time from playwin_sc_log $where $sort");
+            return $query = $this->db->query("select msisdn,circle,operator,original_msg,processed_msg,response_sms,to_char(log_time, 'DD-MM-YY HH24:MI:SS') as log_time from playwin_sc_log $where $sort");
         }else{
             $count = $this->db->query("select count(1) from playwin_sc_log $where")->row_array();
             return $count['count'];
